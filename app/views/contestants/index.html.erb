@@ -1,5 +1,9 @@
 <h1>Contestants</h1>
 
-<% @contestants.each do |contestant| %>
-    <p><%= contestant.name %></p>
-<% end %>
+<section id="contestantProjects">
+  <% @contestants.each do |contestant| %>
+    <p>Name: <%= contestant.name %></p>
+    Affiliated projects:
+    <%= contestant.projects.map(&:name).join(", ") %>
+  <% end %>
+</section>
