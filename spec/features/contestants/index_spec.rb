@@ -13,4 +13,17 @@ RSpec.describe 'it has a contestants index page' do
 
     expect(current_path).to eq("/contestants")
   end
+
+  it 'lists the names of all contestants' do
+    visit "/contestants"
+
+    expect(page).to have_content(@jay.name)
+    expect(page).to have_content(@gretchen.name)
+    expect(page).to have_content(@kentaro.name)
+    expect(page).to have_content(@erin.name)
+  end
+
+  it 'lists the projects each contestant was involved in' do
+
+  end
 end
